@@ -452,3 +452,419 @@ void matrice19(int a[100][100], int n, int m, int k) {
 		}
 	}
 }
+
+
+
+// Ex 1
+
+// PARCURGERE SPIRALA MATRICE
+
+void unuA(int a[100][100], int n, int m) {
+
+	int i1, i2, j1, j2;
+
+	int ct = 1;
+
+	for (i1 = 0, j1 = 0, i2 = n - 1, j2 = m - 1; i1 <= i2 && j1 <= j2; i1++, j1++, i2--, j2--) {
+
+		for (int k = j1; k <= j2; k++) {
+			a[i1][k] = ct;
+			ct++;
+		}
+
+		for (int k = i1 + 1; k <= i2; k++) {
+			a[k][j2] =ct ;
+			ct++;
+		}
+
+		for (int k = j2 - 1; k >= j1; k--) {
+			a[i2][k] = ct;
+			ct++;
+		}
+		for (int k = i2 - 1; k > i1; k--) {
+			a[k][j1] = ct;
+			ct++;
+		}
+
+	}
+
+}
+
+void unuB(int a[100][100], int n, int m) {
+
+	int i, j1, j2;
+
+	int ct = 1;
+
+	for (i = 0, j1 = 0, j2 = m - 1; i <= n-1 && j1 <= j2; i++) {
+
+		if (i % 2 == 0) {
+
+			for (int k = j1; k <= j2; k++) {
+				a[i][k] = ct;
+				ct++;
+			}
+		}
+		else{
+			for (int k = j2; k >= j1; k--) {
+				a[i][k] = ct;
+				ct++;
+			}
+		}
+
+	}
+
+}
+
+void unuC(int a[100][100], int n, int m) {
+
+	
+
+	for (int i = 0; i < n; i++) {
+
+		for (int j = 0; j < m; j++) {
+
+			
+			if ( (i != 0 && i != n - 1)&&(j != 0 && j != m - 1)||i==j||i+j==n-1) {
+				a[i][j] = 1;
+			}
+			else {
+
+				if (i < j && i + j < n - 1) {
+					a[i][j] = 2;
+				}
+				
+				if (i > j && i + j < n - 1) {
+					a[i][j] = 3;
+				}
+				
+				if (j > i && i + j > n - 1) {
+					a[i][j] = 4;
+				}
+				
+				if (i > j && i + j > n - 1) {
+					a[i][j] = 5;
+				}
+				
+
+			}
+
+		}
+
+	}
+
+}
+
+void unuD(int a[100][100], int n, int m) {
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+
+			a[i][j] = i + 1;
+
+			if (j<i) {
+				a[i][j] = j + 1;
+			}
+			else {
+				a[i][j] = i + 1;
+			}
+
+		}
+	}
+
+}
+
+void unuE(int a[100][100], int n, int m) {
+
+	int i1, i2, j1, j2;
+
+	int ct = 1;
+
+
+	for (i1 = 0, j1 = 0, i2 = n - 1, j2 = m - 1; i1 <= i2 && j1 <= j2; i1++, j1++, i2--, j2--) {
+
+
+
+		for (int k = j1; k <= j2; k++) {
+			a[i1][k] = ct;
+			ct++;
+		}
+		for (int k = i1 + 1; k <= i2; k++) {
+			a[k][j2] = ct;
+			ct++;
+		}
+		for (int k = j2 - 1; k >= j1; k--) {
+			a[i2][k] = ct;
+			ct++;
+		}
+		for (int k = i2 - 1; k > i1; k--) {
+			a[k][j1] = ct;
+			ct++;
+		}
+
+
+
+	}
+
+}
+
+void unuF(int a[100][100], int n, int m) {
+
+	for (int i = n-1; i >= 0; i--) {
+		for (int j = m-1; j >=0 ; j--) {
+
+			if (i == n - 1 || j == m - 1) {
+				a[i][j] = 1;
+			}
+			else {
+				a[i][j] = a[i + 1][j] + a[i][j + 1];
+			}
+
+		}
+	}
+
+}
+
+void exericitiu3(int a[100][100], int n, int m) {
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (i + j == n - 1) {
+				a[i][j] = 5;
+			}
+			else {
+				a[i][j] = i + j + 1;
+			}
+		}
+	}
+}
+	
+
+void exercitiu7(int a[100][100], int n, int m) {
+
+	int ct = 0;
+
+	int ctMax = 0;
+
+	int randNr1 = 0;
+
+	int randMaxNr1 = 0;
+
+	for (int i = 0; i < n; i++) {
+
+		int ct = 0;
+
+		for (int j = 0; j < m; j++) {
+
+			if (a[i][j] == 1) {
+
+				ct++;
+
+			}
+
+		}
+
+		if (ct > ctMax) {
+			ctMax = ct;
+			randMaxNr1 = i;
+		}
+
+
+		if (ct == 1) {
+			randNr1 = i;
+		}
+
+	}
+
+	cout << randNr1 << " " << randMaxNr1;
+}
+
+void exercitiu8(int a[100][100], int n, int m) {
+
+	int produsMax = 0;
+
+	int coloana1, coloana2;
+
+	for (int j = 0; j < m; j++) {
+
+		int produs = 1;
+
+		for (int i = 0; i < n; i++) {
+
+			produs *= a[i][j];
+
+		}
+
+		if (produs > produsMax) {
+			produsMax = produs;
+			coloana1 = j;
+		}
+	}
+
+	for (int j = 0; j < m; j++) {
+
+		if (j != coloana1) {
+			int produs = 1;
+
+			for (int i = 0; i < n; i++) {
+				produs *= a[i][j];
+			}
+
+			if (produs == produsMax) {
+				coloana2 = j;
+			}
+
+		}
+
+	}
+
+
+	cout << coloana1 << " "<<coloana2;
+}
+
+
+void exercitiu10(int a[100][100], int n, int m) {
+
+
+	for (int j = 0; j < m; j++) {
+
+		bool crescatoare = true;
+
+		for (int i = 0; i < n-1; i++) {
+
+			if (a[i][j] > a[i + 1][j]) {
+				crescatoare = false;
+				break;
+
+			}
+		}
+
+		if (crescatoare) {
+			cout << j << " ";
+		}
+		
+
+	}
+
+}
+
+void exercitiu12(int a[100][100], int n) {
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			a[i][j] = j-i;
+		}
+	}
+
+}
+
+void exercitiu13(int a[100][100], int n, int m) {
+
+	int i1, i2, j1, j2;
+
+	int ct = 1;
+
+	for (i1 = 0, j1 = 0, i2 = n - 1, j2 = m - 1; i1 <= i2 && j1 <= j2; i1++, j1++, i2--, j2--) {
+
+		for (int k = j1; k <= j2; k++) {
+			a[i1][k] = ct;
+			ct++;
+		}
+
+		for (int k = i1 + 1; k <= i2; k++) {
+			a[k][j2] = ct;
+			ct++;
+		}
+
+		for (int k = j2 - 1; k >= j1; k--) {
+			a[i2][k] = ct;
+			ct++;
+		}
+		for (int k = i2 - 1; k > i1; k--) {
+			a[k][j1] = ct;
+			ct++;
+		}
+
+	}
+
+	int nrMax = 0;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (i + j > n - 1) {
+				if (a[i][j] > nrMax) {
+					nrMax = a[i][j];
+				}
+			}
+		}
+	}
+	cout << nrMax << endl;
+}
+
+void exericitu21(int a[100][100], int n, int m) {
+
+	int produsMax = 0;
+	int produsMax1 = 0;
+
+	int coloana1, coloana2;
+
+	for (int j = 0; j < m; j++) {
+
+		int produs = 1;
+
+		for (int i = 0; i < n; i++) {
+
+			produs *= a[i][j];
+
+		}
+
+		if (produs > produsMax) {
+
+			produsMax = produs;
+			coloana1 = j;
+		}
+
+	}
+
+	for (int j = 0; j < m; j++) {
+
+		if (j != coloana1) {
+
+			int produs = 1;
+
+			for (int i = 0; i < n; i++) {
+				produs *= a[i][j];
+			}
+
+			if (produs > produsMax1) {
+				produsMax1 = produs;
+				coloana2 = j;
+			}
+
+		}
+	}
+
+	cout << coloana1 << " " << coloana2;
+}
+
+void exercitiu22(int a[100][100], int n, int m) {
+
+	for (int j = 0; j < m; j++) {
+
+		for (int i = 0; i < n; i++) {
+
+			int produs = 1;
+
+			for (int k = 0; k < n; k++) {
+				if (k != i) {
+					produs *= a[k][j];
+				}
+			}
+			if (produs == a[i][j]) {
+				cout << a[i][j] << " ";
+			}
+		}
+
+	}
+
+}

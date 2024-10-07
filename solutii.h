@@ -14,7 +14,6 @@ void sol1() {
 
 }
 
-
 void sol2() {
 
 	int a[100][100] = {};
@@ -59,8 +58,6 @@ void sol4() {
 	afisareMatrice(a, n, m);
 
 }
-
-
 void sol5() {
 
 	int a[100][100] = {};
@@ -86,10 +83,7 @@ void sol6() {
 	int n = 5;
 
 	int m = 5;
-
-
 	matrice6(a, n, m);
-
 	cout << endl;
 
 	afisareMatrice(a, n, m);
@@ -196,7 +190,6 @@ void sol12() {
 
 }
 
-
 void sol13() {
 
 	int a[100][100] = { {1,1,1,10,2},{6,11,5,1,4}, {6,2,6,5,3},{1,0,12,2,10},{16,1,13,1,8} };
@@ -229,6 +222,13 @@ void sol14() {
 
 	int m = 5;
 
+
+	cout << "INAINTE " << endl;
+
+	afisareMatrice(a, n, m);
+
+	cout << "DUPA" << endl;
+
 	matrice14(a, n, m);
 
 	afisareMatrice(a, n, m);
@@ -259,7 +259,6 @@ void sol15() {
 
 
 }
-
 
 void sol16() {
 
@@ -306,20 +305,6 @@ void sol18() {
 
 }
 
-void sol19() {
-
-	int a[100][100] =  { {10,11,12,13,14,15},{16,17,18,19,20,21},{22,23,24,25,26,27},{28,29,30,31,32,33},{34,35,36,37,38,39},{40,41,42,43,44,45} };
-
-	int n = 6;
-
-	int m = 6;
-
-	afisareMatrice(a, n, m);
-
-	afisareCadran(a, n, m);
-
-
-}
 
 void sol20() {
 
@@ -335,5 +320,239 @@ void sol20() {
 
 	afisareMatrice(a, n, m);
 
+
+}
+
+///////////////
+
+
+
+/// <summary>
+/// 
+/// </summary>
+
+void sol22() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuA(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+
+void sol23() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuB(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+
+void sol24() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuC(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+
+void sol25() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuD(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+
+void sol26() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuE(a, n, m);
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (a[i][j] > 9) {
+				a[i][j] = a[i][j] % 10;
+			}
+		}
+	}
+
+	afisareMatrice(a, n, m);
+
+}
+
+void sol27() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	unuF(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+void sol28() {
+
+	int a[100][100] = {};
+
+	int n = 5;
+
+	int m = 5;
+
+	exericitiu3(a, n, m);
+
+	afisareMatrice(a, n, m);
+
+}
+
+void sol29() {
+
+	int a[100][100] = { {1,0,1,0,1},{1,0,1,1,1},{1,1,1,1,1},{0,1,0,0,0} };
+
+	int n = 4;
+
+	int m = 5;
+
+	exercitiu7(a, n, m);
+
+	cout << endl;
+
+	afisareMatrice(a, n, m);
+
+
+}
+
+void sol30() {
+
+	int a[100][100] = { {2,1,1,0,2},{1,1,1,1,0},{2,2,2,1,1},{1,2,1,1,2} };
+
+	int n = 4;
+
+	int m = 5;
+
+	exercitiu8(a, n, m);
+
+	cout << endl;
+
+	afisareMatrice(a, n, m);
+
+
+}
+
+void sol31() {
+	int a[100][100] = { {1,1,1,10,2},{6,11,5,1,4}, {6,2,6,5,3},{1,22,12,2,10},{16,1,13,1,8} };
+
+	int n = 5;
+
+	int m = 5;
+
+
+	exercitiu10(a, n, m);
+
+	cout << endl;
+
+	afisareMatrice(a, n, m);
+
+}
+
+
+void sol32() {
+
+	int a[100][100] = {};
+
+	int n = 4;
+
+	int m = 4;
+
+	exercitiu12(a, n);
+
+	afisareMatrice(a, n, m);
+
+
+	// 0
+}
+
+
+void sol33() {
+
+	int a[100][100] = {};
+
+	int n =5;
+
+	int m = 5;
+
+	exercitiu13(a, n,m);
+
+	afisareMatrice(a, n, m);
+
+
+	// 0
+}
+
+void sol34() {
+
+	int a[100][100] = { { 2,1,1,0,0 }, {1, 1, 1, 1, 2}, { 2,2,2,1,2 } };
+
+	int n = 3;
+
+	int m = 5;
+
+	exericitu21(a, n, m);
+
+	cout << endl;
+
+	afisareMatrice(a, n, m);
+	
+}
+
+void sol35() {
+
+	int a[100][100] = { {1,1,5,10,2},{6,11,1,1,4}, {6,2,5,5,3},{1,22,12,2,10},{16,1,7,1,8} };
+
+	int n = 5;
+
+	int m = 5;
+
+	exercitiu22(a, n, m);
+
+	cout << endl;
+
+	afisareMatrice(a, n, m);
 
 }
